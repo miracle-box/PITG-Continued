@@ -22,19 +22,19 @@ public enum GlazingToolMode {
         BREAK.enabled = Config.ENABLE_PANE_BREAK.get();
     }
 
+    public static GlazingToolMode byIndex(int index) {
+        for (GlazingToolMode m : GlazingToolMode.values()) {
+            if (m.index == index && m.enabled) return m;
+        }
+        return ROTATE;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public int getIndex() {
         return index;
-    }
-
-    public static GlazingToolMode byIndex(int index) {
-        for (GlazingToolMode m : GlazingToolMode.values()) {
-            if (m.index == index && m.enabled) return m;
-        }
-        return ROTATE;
     }
 
     // Advance mode to the next available state, falling through unavailable modes

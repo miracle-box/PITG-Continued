@@ -33,7 +33,6 @@
   "block.pitg.green_stained_glasspane": "Зелёная окрашенная стеклянная панель (выровненный край)",
   "item.pitg.black_stained_glasspane": "Чёрная окрашенная стеклянная панель (выровненный край)",
   "block.pitg.black_stained_glasspane": "Чёрная окрашенная стеклянная панель (выровненный край)",
-
   "item.pitg.dualglasspane": "Двойная стеклянная панель (выровненный край)",
   "block.pitg.dualglasspane": "Двойная стеклянная панель (выровненный край)",
   "item.pitg.red_stained_dualglasspane": "Красная окрашенная двойная стеклянная панель (выровненный край)",
@@ -68,11 +67,8 @@
   "block.pitg.green_stained_dualglasspane": "Зелёная окрашенная двойная стеклянная панель (выровненный край)",
   "item.pitg.black_stained_dualglasspane": "Чёрная окрашенная двойная стеклянная панель (выровненный край)",
   "block.pitg.black_stained_dualglasspane": "Чёрная окрашенная двойная стеклянная панель (выровненный край)",
-
-
   "item.pitg.glazing_tool": "Инструмент для застекления",
   "item.pitg.green_dye": "Зелёная краска",
-
   "_comment": "Творческие вкладки",
   "itemGroup.pitg": "Pane In The Glass"
 }

@@ -20,10 +20,8 @@ public class Pitg {
     public static final ResourceLocation NETWORK_CHANNEL = new ResourceLocation("pitg:glazing_tool");
 
     public static final String[] COLORS = {"", "white", "red", "blue", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "brown", "green", "black"};
-
-    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
-
     private static final Logger LOGGER = LogManager.getLogger();
+    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
     @SuppressWarnings("removal")
     public Pitg() {

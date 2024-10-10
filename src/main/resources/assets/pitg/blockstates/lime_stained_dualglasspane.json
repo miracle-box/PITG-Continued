@@ -2,10 +2,14 @@
   "multipart": [
     {
       "when": {
-        "OR": [{
-          "north": "true"},{
-          "south": "true"
-        }]
+        "OR": [
+          {
+            "north": "true"
+          },
+          {
+            "south": "true"
+          }
+        ]
       },
       "apply": {
         "model": "pitg:block/lime_stained_glasspane"
@@ -13,10 +17,14 @@
     },
     {
       "when": {
-        "OR": [{
-          "west": "true"},{
-          "east": "true"
-        }]
+        "OR": [
+          {
+            "west": "true"
+          },
+          {
+            "east": "true"
+          }
+        ]
       },
       "apply": {
         "model": "pitg:block/lime_stained_glasspane",
@@ -25,10 +33,14 @@
     },
     {
       "when": {
-        "OR": [{
-          "north": "true"},{
-          "south": "true"
-        }]
+        "OR": [
+          {
+            "north": "true"
+          },
+          {
+            "south": "true"
+          }
+        ]
       },
       "apply": {
         "model": "pitg:block/lime_stained_glasspane",
@@ -37,10 +49,14 @@
     },
     {
       "when": {
-        "OR": [{
-          "west": "true"},{
-          "east": "true"
-        }]
+        "OR": [
+          {
+            "west": "true"
+          },
+          {
+            "east": "true"
+          }
+        ]
       },
       "apply": {
         "model": "pitg:block/lime_stained_glasspane",

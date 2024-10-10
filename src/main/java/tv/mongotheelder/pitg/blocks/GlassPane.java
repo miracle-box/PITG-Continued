@@ -2,9 +2,8 @@ package tv.mongotheelder.pitg.blocks;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -22,7 +21,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import tv.mongotheelder.pitg.setup.Config;
 
 public class GlassPane extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
@@ -35,17 +33,14 @@ public class GlassPane extends Block implements SimpleWaterloggedBlock {
     public static final int WEST_MASK = 0b0010;
     public static final int SOUTH_MASK = 0b0100;
     public static final int EAST_MASK = 0b1000;
-
-    protected final VoxelShape[] shapes;
-    protected final VoxelShape[] collisionShapes;
-    protected final Object2IntMap<BlockState> indexHash = new Object2IntOpenHashMap<>();
     protected static final double PANE_WIDTH = 16.0;
     protected static final double PANE_THICKNESS = 2.0;
     protected static final double PANE_HEIGHT = 16.0;
-
     protected static final double CORNER_HITBOX_SIZE = 0.25;
-
     protected static final Logger LOGGER = LogManager.getLogger();
+    protected final VoxelShape[] shapes;
+    protected final VoxelShape[] collisionShapes;
+    protected final Object2IntMap<BlockState> indexHash = new Object2IntOpenHashMap<>();
 
     public GlassPane(Properties properties) {
         super(properties);
@@ -61,10 +56,10 @@ public class GlassPane extends Block implements SimpleWaterloggedBlock {
     }
 
     protected VoxelShape[] makeShapes(double paneWidth, double paneThickness, double paneHeight) {
-        VoxelShape south = Block.box(0.0D, 0.0D, paneWidth-paneThickness, paneWidth, paneHeight, paneWidth);
+        VoxelShape south = Block.box(0.0D, 0.0D, paneWidth - paneThickness, paneWidth, paneHeight, paneWidth);
         VoxelShape west = Block.box(0.0D, 0.0D, 0.0D, paneThickness, paneHeight, paneWidth);
         VoxelShape north = Block.box(0.0D, 0.0D, 0.0D, paneWidth, paneHeight, paneThickness);
-        VoxelShape east = Block.box(paneWidth-paneThickness, 0.0D, 0.0D, paneWidth, paneHeight, paneWidth);
+        VoxelShape east = Block.box(paneWidth - paneThickness, 0.0D, 0.0D, paneWidth, paneHeight, paneWidth);
         VoxelShape empty = Shapes.empty();
         VoxelShape[] shapes = new VoxelShape[]{
                 empty, // 0000
@@ -184,7 +179,7 @@ public class GlassPane extends Block implements SimpleWaterloggedBlock {
 
     /**
      * Determine which faces to include based on where the player clicked.
-     *
+     * <p>
      * The possible directions are: NORTH, NORTHWEST, WEST, SOUTHWEST, SOUTH, SOUTHEAST, EAST, NORTHEAST
      * by combining a primary face and one optional adjoining face. For example, clicking in the north center of a block
      * will generate only the north facing pane while clicking on the northwest corner will generate both north and west
@@ -201,7 +196,7 @@ public class GlassPane extends Block implements SimpleWaterloggedBlock {
         boolean clickedSouth = ((context.getClickLocation().z - (double) blockpos.getZ()) >= (1.0D - CORNER_HITBOX_SIZE)) && (direction != Direction.NORTH);
         boolean clickedNorth = ((context.getClickLocation().z - (double) blockpos.getZ()) <= CORNER_HITBOX_SIZE) && (direction != Direction.SOUTH);
         boolean clickedEast = ((context.getClickLocation().x - (double) blockpos.getX()) >= (1.0D - CORNER_HITBOX_SIZE)) && (direction != Direction.WEST);
-        boolean clickedWest = ((context.getClickLocation().x - (double) blockpos.getX()) <= CORNER_HITBOX_SIZE)  && (direction != Direction.EAST);
+        boolean clickedWest = ((context.getClickLocation().x - (double) blockpos.getX()) <= CORNER_HITBOX_SIZE) && (direction != Direction.EAST);
         boolean horizontalFaceClicked = !(clickedNorth || clickedEast || clickedSouth || clickedWest);
 
         // If the center of the face is clicked, default to the predominate horizontal facing direction

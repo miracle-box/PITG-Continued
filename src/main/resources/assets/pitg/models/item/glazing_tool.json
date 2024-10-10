@@ -5,9 +5,9 @@
   },
   "overrides": [
     {
-    "predicate": {
-      "pitg:unbreaking": 1
-    },
+      "predicate": {
+        "pitg:unbreaking": 1
+      },
       "model": "pitg:item/glazing_tool_unbreaking"
     }
   ]

@@ -3,8 +3,12 @@
     {
       "when": {
         "OR": [
-          {"north": true},
-          {"south": true}
+          {
+            "north": true
+          },
+          {
+            "south": true
+          }
         ]
       },
       "apply": {
@@ -61,7 +65,8 @@
     },
     {
       "when": {
-        "west": false, "east": false
+        "west": false,
+        "east": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_left"
@@ -69,7 +74,8 @@
     },
     {
       "when": {
-        "west": false, "east": false
+        "west": false,
+        "east": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_right",
@@ -78,7 +84,8 @@
     },
     {
       "when": {
-        "east": false, "west": false
+        "east": false,
+        "west": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_right"
@@ -86,7 +93,8 @@
     },
     {
       "when": {
-        "east": false, "west": false
+        "east": false,
+        "west": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_left",
@@ -95,7 +103,8 @@
     },
     {
       "when": {
-        "south": false, "north": false
+        "south": false,
+        "north": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_right",
@@ -104,7 +113,8 @@
     },
     {
       "when": {
-        "south": false, "north": false
+        "south": false,
+        "north": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_left",
@@ -113,7 +123,8 @@
     },
     {
       "when": {
-        "north": false, "south": false
+        "north": false,
+        "south": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_left",
@@ -122,7 +133,8 @@
     },
     {
       "when": {
-        "north": false, "south": false
+        "north": false,
+        "south": false
       },
       "apply": {
         "model": "pitg:block/glasspane_edge_right",

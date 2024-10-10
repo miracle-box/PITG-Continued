@@ -30,7 +30,7 @@ public class Recipes extends RecipeProvider {
                 .requires(result, 1)
                 .unlockedBy("has_glass", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.GLASS))
                 .group(group)
-                .save(consumer, ForgeRegistries.BLOCKS.getKey(ingredient) +"_from_edge_pane");
+                .save(consumer, ForgeRegistries.BLOCKS.getKey(ingredient) + "_from_edge_pane");
     }
 
     protected void dualGlassPaneRecipe(Consumer<FinishedRecipe> consumer, Block result, Block ingredient, String group) {
@@ -43,7 +43,7 @@ public class Recipes extends RecipeProvider {
                 .requires(result, 1)
                 .unlockedBy("has_glass", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.GLASS))
                 .group(group)
-                .save(consumer, ForgeRegistries.BLOCKS.getKey(ingredient)+"_from_dual_pane");
+                .save(consumer, ForgeRegistries.BLOCKS.getKey(ingredient) + "_from_dual_pane");
     }
 
     @Override
