@@ -1,10 +1,10 @@
 package tv.mongotheelder.pitg.networking;
 
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.network.NetworkDirection;
-import net.minecraftforge.fml.network.NetworkRegistry;
-import net.minecraftforge.fml.network.simple.SimpleChannel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.network.NetworkDirection;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.simple.SimpleChannel;
 import tv.mongotheelder.pitg.Pitg;
 
 public class PacketHandler {
@@ -16,7 +16,7 @@ public class PacketHandler {
         NETWORK_CHANNEL.messageBuilder(ModePacket.class, nextMessageId())
                 .encoder(ModePacket::encode)
                 .decoder(ModePacket::decode)
-                .consumer(ModePacket::handle)
+                .consumerMainThread(ModePacket::handle)
                 .add();
     }
 
@@ -32,7 +32,7 @@ public class PacketHandler {
                 .simpleChannel();
     }
 
-    public static void sendToPlayer(Object pkt, ServerPlayerEntity player) {
-        NETWORK_CHANNEL.sendTo(pkt, player.connection.netManager, NetworkDirection.PLAY_TO_CLIENT);
+    public static void sendToPlayer(Object pkt, ServerPlayer player) {
+        NETWORK_CHANNEL.sendTo(pkt, player.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
     }
 }

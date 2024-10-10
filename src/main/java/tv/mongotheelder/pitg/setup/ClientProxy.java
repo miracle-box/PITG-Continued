@@ -1,21 +1,21 @@
 package tv.mongotheelder.pitg.setup;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.network.NetworkEvent.Context;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
 public class ClientProxy implements IProxy {
 
     @Override
-    public World getClientWorld() {
-        return Minecraft.getInstance().world;
+    public Level getClientWorld() {
+        return Minecraft.getInstance().level;
     }
 
     @Override
-    public PlayerEntity getPlayer(Supplier<Context> context) {
+    public Player getPlayer(Supplier<NetworkEvent.Context> context) {
         return Minecraft.getInstance().player;
     }
 }

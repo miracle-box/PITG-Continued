@@ -1,14 +1,14 @@
 package tv.mongotheelder.pitg.setup;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.network.NetworkEvent.Context;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
 public interface IProxy {
 
-    World getClientWorld();
+    Level getClientWorld();
 
-    PlayerEntity getPlayer(Supplier<Context> context);
+    Player getPlayer(Supplier<NetworkEvent.Context> context);
 }

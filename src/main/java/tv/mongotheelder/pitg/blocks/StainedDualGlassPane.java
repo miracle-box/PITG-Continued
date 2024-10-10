@@ -1,6 +1,6 @@
 package tv.mongotheelder.pitg.blocks;
 
-import net.minecraft.item.DyeColor;
+import net.minecraft.world.item.DyeColor;
 
 public class StainedDualGlassPane extends DualGlassPane {
     private final DyeColor color;
@@ -8,11 +8,11 @@ public class StainedDualGlassPane extends DualGlassPane {
     public StainedDualGlassPane(DyeColor colorIn, Properties properties) {
         super(properties);
         this.color = colorIn;
-        this.setDefaultState(this.stateContainer.getBaseState()
-                .with(NORTH, Boolean.FALSE)
-                .with(EAST, Boolean.FALSE)
-                .with(SOUTH, Boolean.FALSE)
-                .with(WEST, Boolean.FALSE)
-                .with(WATERLOGGED, Boolean.FALSE));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(NORTH, Boolean.FALSE)
+                .setValue(EAST, Boolean.FALSE)
+                .setValue(SOUTH, Boolean.FALSE)
+                .setValue(WEST, Boolean.FALSE)
+                .setValue(WATERLOGGED, Boolean.FALSE));
     }
 }

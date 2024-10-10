@@ -1,9 +1,10 @@
 package tv.mongotheelder.pitg.datagen;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import tv.mongotheelder.pitg.Pitg;
 import tv.mongotheelder.pitg.blocks.DualGlassPane;
 import tv.mongotheelder.pitg.blocks.GlassPane;
@@ -13,7 +14,7 @@ import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOL
 
 public class BlockStates extends BlockStateProvider {
     public BlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, Pitg.MODID, exFileHelper);
+        super(gen.getPackOutput(), Pitg.MODID, exFileHelper);
     }
 
     public void modelGlassPaneSide(BlockModelBuilder model, String path) {

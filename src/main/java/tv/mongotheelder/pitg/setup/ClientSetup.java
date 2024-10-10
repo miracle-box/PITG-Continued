@@ -1,7 +1,7 @@
 package tv.mongotheelder.pitg.setup;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -11,40 +11,40 @@ import tv.mongotheelder.pitg.Pitg;
 public class ClientSetup {
 
     public static void init(final FMLClientSetupEvent event) {
-        RenderTypeLookup.setRenderLayer(Registration.GLASS_PANE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(Registration.RED_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.WHITE_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.BLUE_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.ORANGE_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.MAGENTA_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.LIGHT_BLUE_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.YELLOW_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.LIME_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.PINK_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.GRAY_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.LIGHT_GRAY_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.CYAN_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.PURPLE_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.BROWN_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.GREEN_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.BLACK_STAINED_GLASS_PANE.get(), RenderType.getTranslucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GLASS_PANE.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(Registration.RED_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.WHITE_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.BLUE_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.ORANGE_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.MAGENTA_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.LIGHT_BLUE_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.YELLOW_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.LIME_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.PINK_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GRAY_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.LIGHT_GRAY_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.CYAN_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.PURPLE_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.BROWN_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GREEN_STAINED_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.BLACK_STAINED_GLASS_PANE.get(), RenderType.translucent());
 
-        RenderTypeLookup.setRenderLayer(Registration.DUAL_GLASS_PANE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(Registration.RED_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.WHITE_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.BLUE_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.ORANGE_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.MAGENTA_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.LIGHT_BLUE_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.YELLOW_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.LIME_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.PINK_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.GRAY_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.LIGHT_GRAY_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.CYAN_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.PURPLE_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.BROWN_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.GREEN_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(Registration.BLACK_STAINED_DUAL_GLASS_PANE.get(), RenderType.getTranslucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.DUAL_GLASS_PANE.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(Registration.RED_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.WHITE_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.BLUE_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.ORANGE_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.MAGENTA_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.LIGHT_BLUE_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.YELLOW_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.LIME_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.PINK_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GRAY_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.LIGHT_GRAY_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.CYAN_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.PURPLE_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.BROWN_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GREEN_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.BLACK_STAINED_DUAL_GLASS_PANE.get(), RenderType.translucent());
     }
 }

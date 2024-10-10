@@ -1,6 +1,7 @@
 package tv.mongotheelder.pitg;
 
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -24,12 +25,17 @@ public class Pitg {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
+    @SuppressWarnings("removal")
     public Pitg() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
+        // [TODO] Should split all registrations into categories.
         Registration.init();
+        CreativeTab.TABS.register(bus);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(ModSetup::init);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientSetup::init);
+        bus.addListener(ModSetup::init);
+        bus.addListener(ClientSetup::init);
     }
 }
