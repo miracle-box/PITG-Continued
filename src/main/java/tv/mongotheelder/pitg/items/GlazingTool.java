@@ -1,12 +1,10 @@
 package tv.mongotheelder.pitg.items;
 
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -40,19 +38,6 @@ public class GlazingTool extends Item {
 
     public GlazingTool(Item.Properties properties) {
         super(properties);
-
-        // https://docs.minecraftforge.net/en/1.20.x/resources/client/models/itemproperties/#adding-properties-to-items
-        // This should be done *client only*, seems we need to investigate.
-        ItemProperties.register(this, new ResourceLocation("pitg:unbreaking"),
-                (itemStack, world, livingEntity, id) -> {
-                    if (livingEntity != null) {
-                        boolean flag = livingEntity.getMainHandItem() == itemStack;
-                        if (livingEntity.getMainHandItem().getItem() instanceof GlazingTool) {
-                            return flag && getMode(itemStack) == GlazingToolMode.UNBREAKABLE ? 1.0f : 0.0f;
-                        }
-                    }
-                    return 0.0F;
-                });
     }
 
     @Override
